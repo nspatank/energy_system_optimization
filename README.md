@@ -16,6 +16,7 @@ Finally, to build hands-on experience with optimization methods for energy syste
 ### Notebooks
 
 1. [Constrained Optimization](Notebooks/01-Constrained-Optimization.ipynb)
+2. [Anatomy of the model](Notebooks/02-Anatomy-of-a-Model.ipynb)
 
 
 ### Homeworks
