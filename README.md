@@ -17,6 +17,11 @@ Finally, to build hands-on experience with optimization methods for energy syste
 
 1. [Constrained Optimization](Notebooks/01-Constrained-Optimization.ipynb)
 2. [Anatomy of the model](Notebooks/02-Anatomy-of-a-Model.ipynb)
+3. [Basic Capacity Expansion](Notebooks/03-Basic-Capacity-Expansion.ipynb)
+4. [Economic Dispatch](Notebooks/04-Economic-Dispatch.ipynb)
+5. [Unit Commitment](Notebooks/05-Unit-Commitment.ipynb)
+6. [Optimal Power Flow](Notebooks/06-Optimal-Power-Flow.ipynb)
+7. [Complex Capacity Expansion](Notebooks/07-Complex-Capacity-Expansion.ipynb)
 
 
 ### Homeworks
