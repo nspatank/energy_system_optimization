@@ -1,0 +1,4 @@
+ID,Zone,Resource,Total_Storage_MWh,Start_Storage_MWh,Change_in_Storage_MWh
+27,1,battery,-0.0,0.0,-0.0
+40,2,battery,-0.0,0.0,-0.0
+54,3,battery,-0.0,0.0,-0.0
