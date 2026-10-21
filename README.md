@@ -13,7 +13,7 @@ The course will first introduce students to the theory and mathematics of constr
 Finally, to build hands-on experience with optimization methods for energy systems engineering, the course will introduce students to several canonical problems in power and energy systems planning and operations, including: economic dispatch, unit commitment, and capacity planning.
 
 
-### Student quickstart: Constrained Optimization
+### Student quickstart: Course notebooks
 
 1. Install **Julia 1.13.2** for your operating system from the
    [official downloads page](https://julialang.org/downloads/manual-downloads/).
@@ -49,11 +49,17 @@ Jupyter, and the kernel are stored under `.local/`, which Git ignores. Start Jup
 through this script so it can find the repository-local kernel. If you move the
 folder, run the script again to refresh the kernel paths.
 
-This environment supports **the Constrained Optimization notebook**. Later
-notebooks require additional packages, including JuMP and optimization solvers.
-The notebook has been executed through its Jupyter kernel on macOS with Julia
-1.13.2, including all 16 code cells and 10 interactive plots. Windows and Linux
-have not yet been tested.
+This environment includes the dependencies for **all seven course notebooks**,
+including JuMP, HiGHS, GLPK, CSV, DataFrames, PrettyTables, and VegaLite.
+Use the same course kernel for every notebook; no package installation inside
+the notebooks is needed. Notebook 7 uses the included 10-day dataset by default;
+larger datasets and integer optimization experiments can take longer to solve.
+All seven course notebooks were executed in fresh Julia 1.13.2 Jupyter kernels
+on macOS on October 21, 2026. Notebooks 2–7 passed all 167 code cells, including
+solver-status checks, plot rendering, and result exports. Unit commitment uses
+the MIP gap tolerances specified in the notebook. Notebook 7 was checked with
+its default 10-day dataset; other time samples were not executed.
+Windows and Linux have not yet been tested.
 
 If the browser does not open, copy the localhost URL printed in the terminal
 into your browser. If the course kernel is missing, stop Jupyter and rerun the
@@ -61,6 +67,22 @@ launcher. To install all dependencies and the kernel without opening Jupyter, ru
 `julia start_notebook.jl --setup-only`.
 To print a browser link without automatically opening a browser, use
 `julia start_notebook.jl --no-browser`.
+
+### Notebook validation
+
+After setting up the course environment, the following command executes notebooks
+2–7 in separate Julia kernels and checks that every optimization solve returns a
+feasible optimum:
+
+```sh
+.local/jupyter-env/bin/python scripts/validate_notebooks.py
+```
+
+On Windows, use `.local/jupyter-env/python.exe` instead. The script uses temporary
+copies of input data so validation does not overwrite course result files. Executed
+notebooks and the latest report are saved under `.local/validation/`. To run a
+single notebook, append its filename, for example
+`06-Optimal-Power-Flow.ipynb`. Notebook 1 can also be selected explicitly.
 
 ### Instructor's local Julia runtime
 
