@@ -1,0 +1,3 @@
+# Repository-local Julia runtime, downloads, and package cache
+/.local/
+/.CondaPkg/

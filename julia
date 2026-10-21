@@ -1,0 +1,12 @@
+#!/bin/sh
+# Use the repository's Julia runtime and isolated package environment.
+set -eu
+repo_dir=$(CDPATH= cd -- "$(dirname -- "$0")" && pwd)
+runtime="$repo_dir/.local/julia-1.13.2/bin/julia"
+if [ ! -x "$runtime" ]; then
+    echo "Julia 1.13.2 is missing: $runtime" >&2
+    exit 1
+fi
+export JULIA_DEPOT_PATH="$repo_dir/.local/julia-depot"
+export JULIA_LOAD_PATH="@:@stdlib"
+exec "$runtime" --startup-file=no --project="$repo_dir" "$@"
